@@ -1,0 +1,57 @@
+<!--
+Recommended other profiles:
+- services/nginx
+- services/redis
+-->
+<agent_config profile="application-gitlab">
+	<syscheck>
+		<directories check_all="yes">/home/git/gitlab</directories>
+		<directories check_all="yes">/home/git/gitlab.pub</directories>
+		<directories check_all="yes">/home/git/gitlab-shell</directories>
+		<ignore>/home/git/gitlab/log</ignore>
+		<ignore>/home/git/gitlab/public/uploads</ignore>
+		<ignore>/home/git/gitlab/tmp</ignore>
+		<ignore type="sregex">/home/git/gitlab-shell/gitlab-shell.log.*</ignore>
+	</syscheck>
+
+	<localfile>
+	    <log_format>syslog</log_format>
+		<location>/home/git/gitlab/log/application.log</location>
+	</localfile>
+	<localfile>
+	    <log_format>syslog</log_format>
+        <location>/home/git/gitlab/log/githost.log</location>
+	</localfile>
+	<!--<localfile>
+	    <log_format>syslog</log_format>
+        <location>/home/git/gitlab/log/production.log</location>
+	</localfile>-->
+    <!--<localfile>
+	    <log_format>syslog</log_format>
+        <location>/home/git/gitlab/log/satellites.log</location>
+	</localfile>-->
+    <localfile>
+        <log_format>syslog</log_format>
+        <location>/home/git/gitlab/log/unicorn.stderr.log</location>
+	</localfile>
+    <localfile>
+        <log_format>syslog</log_format>
+        <location>/home/git/gitlab/log/unicorn.stdout.log</location>
+	</localfile>
+	<localfile>
+        <log_format>syslog</log_format>
+        <location>/home/git/gitlab-shell/gitlab-shell.log</location>
+	</localfile>
+
+	<!-- START: recommended profiles -->
+	<localfile>
+        <log_format>syslog</log_format>
+        <location>/var/log/nginx/gitlab_access.log</location>
+	</localfile>
+
+	<localfile>
+        <log_format>syslog</log_format>
+        <location>/var/log/nginx/gitlab_error.log</location>
+	</localfile>
+	<!-- END: recommended profiles --
+</agent_config>

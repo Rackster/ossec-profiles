@@ -1,0 +1,15 @@
+<agent_config profile="service-php-fpm">
+	<syscheck>
+		<directories check_all="yes">/etc/php-fpm.conf</directories>
+        <directories check_all="yes">/etc/php-fpm.d</directories>
+	</syscheck>
+
+    <localfile>
+        <log_format>syslog</log_format>
+        <location>/var/log/php-fpm/error.log</location>
+	</localfile>
+	<localfile>
+        <log_format>syslog</log_format>
+        <location>/var/log/php-fpm/www-error.log</location>
+	</localfile>
+</agent_config>

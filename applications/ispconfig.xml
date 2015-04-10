@@ -1,0 +1,44 @@
+<!--
+Recommended other profiles:
+- services/apache2
+- services/dovecot
+- services/fail2ban
+- services/postfix
+-->
+<agent_config profile="application-ispconfig">
+	<syscheck>
+		<directories check_all="yes">/usr/local/ispconfig</directories>
+		<ignore>/usr/local/ispconfig/interface/cache</ignore>
+		<ignore>/usr/local/ispconfig/interface/temp</ignore>
+		<ignore>/usr/local/ispconfig/server/temp</ignore>
+
+		<directories check_all="yes">/var/www/php-cgi-scripts</directories>
+		<directories check_all="yes">/var/www/php-fcgi-scripts/apps</directories>
+		<directories check_all="yes">/var/www/php-fcgi-scripts/ispconfig</directories>
+	</syscheck>
+
+	<localfile>
+	    <log_format>syslog</log_format>
+		<location>/var/log/ispconfig/auth.log</location>
+	</localfile>
+    <localfile>
+	    <log_format>syslog</log_format>
+		<location>/var/log/ispconfig/cron.log</location>
+	</localfile>
+    <localfile>
+	    <log_format>syslog</log_format>
+		<location>/var/log/ispconfig/ispconfig.log</location>
+	</localfile>
+
+	<!-- START: recommended profiles -->
+	<localfile>
+	    <log_format>apache</log_format>
+		<location>/var/log/apache2/ispconfig.log</location>
+	</localfile>
+
+	<localfile>
+	    <log_format>apache</log_format>
+		<location>/var/log/apache2/ispconfig.error.log</location>
+	</localfile>
+	<!-- END: recommended profiles -->
+</agent_config>

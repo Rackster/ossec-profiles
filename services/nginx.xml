@@ -1,0 +1,14 @@
+<agent_config profile="service-nginx">
+	<syscheck>
+		<directories check_all="yes">/etc/nginx</directories>
+	</syscheck>
+
+	<localfile>
+        <log_format>syslog</log_format>
+        <location>/var/log/nginx/access.log</location>
+	</localfile>
+	<localfile>
+        <log_format>syslog</log_format>
+        <location>/var/log/nginx/error.log</location>
+	</localfile>
+</agent_config>
