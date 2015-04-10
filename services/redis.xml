@@ -1,7 +1,7 @@
 <agent_config profile="service-redis">
     <syscheck>
-		<directories check_all="yes">/etc/redis</directories>
-	</syscheck>
+        <directories check_all="yes">/etc/redis</directories>
+    </syscheck>
 
     <localfile>
         <log_format>syslog</log_format>

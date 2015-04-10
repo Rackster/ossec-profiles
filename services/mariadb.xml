@@ -1,11 +1,11 @@
 <agent_config profile="service-mariadb">
-	<syscheck>
-		<directories check_all="yes">/etc/my.cnf</directories>
+    <syscheck>
+        <directories check_all="yes">/etc/my.cnf</directories>
         <directories check_all="yes">/etc/my.cnf.d</directories>
-	</syscheck>
+    </syscheck>
 
-	<localfile>
+    <localfile>
         <log_format>syslog</log_format>
         <location>/var/log/mariadb/mariadb.log</location>
-	</localfile>
+    </localfile>
 </agent_config>

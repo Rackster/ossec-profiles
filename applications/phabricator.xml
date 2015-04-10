@@ -8,27 +8,27 @@ Recommended other profiles:
 - services/php-fpm
 -->
 <agent_config profile="application-phabricator">
-	<syscheck>
-		<directories check_all="yes">/srv/phabricator</directories>
-		<ignore>/srv/phabricator/repositories</ignore>
-		<ignore>/srv/phabricator/storage</ignore>
-		<ignore>/srv/phabricator/tmp</ignore>
-	</syscheck>
+    <syscheck>
+        <directories check_all="yes">/srv/phabricator</directories>
+        <ignore>/srv/phabricator/repositories</ignore>
+        <ignore>/srv/phabricator/storage</ignore>
+        <ignore>/srv/phabricator/tmp</ignore>
+    </syscheck>
 
-	<localfile>
-	    <log_format>syslog</log_format>
-		<location>/var/log/phabricator/access.log</location>
-	</localfile>
-	<!--<localfile>
-	    <log_format>syslog</log_format>
-		<location>/var/log/phabricator/aphlict.log</location>
-	</localfile>-->
     <localfile>
         <log_format>syslog</log_format>
-		<location>/var/log/phabricator/ssh.log</location>
-	</localfile>
+        <location>/var/log/phabricator/access.log</location>
+    </localfile>
+    <!--<localfile>
+        <log_format>syslog</log_format>
+        <location>/var/log/phabricator/aphlict.log</location>
+    </localfile>-->
+    <localfile>
+        <log_format>syslog</log_format>
+        <location>/var/log/phabricator/ssh.log</location>
+    </localfile>
     <localfile>
         <log_format>syslog</log_format>
         <location>/var/log/phabricator/phd/daemons.log</location>
-	</localfile>
+    </localfile>
 </agent_config>
